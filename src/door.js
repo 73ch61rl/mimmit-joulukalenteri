@@ -6,7 +6,9 @@ const keywords = [
   "Mrs. Claus",
   "Rudolph reindeer",
   "Santa Claus",
-  "Christmas elf"
+  "Christmas elf",
+  "Mistletoe",
+  "Christmas tree"
 ];
 
 const doorImgUrl =
@@ -43,13 +45,13 @@ class Door extends Component {
 
     if (opened)
       return (
-        <div className="door-opened" onClick={this.close.bind(this)}>
+        <div className="door door-opened" onClick={this.close.bind(this)}>
           <img src={this.state.gifUrl} alt={keyword} />
         </div>
       );
     else
       return (
-        <div className="door-closed" onClick={this.open.bind(this)}>
+        <div className="door door-closed" onClick={this.open.bind(this)}>
           <img src={doorImgUrl} alt="door closed" />
         </div>
       );
@@ -57,7 +59,7 @@ class Door extends Component {
 
   render() {
     return (
-      <div className="door">
+      <div className="door-frame">
         <div className="day">{this.props.day}</div>
         {this.renderDoor()}
       </div>

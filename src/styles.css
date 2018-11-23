@@ -1,41 +1,46 @@
 body {
-  font-family: sans-serif;
   background: url("https://www.earlham.lib.ia.us/theme_resources/christmassnowred/image");
 }
 
-.App > .calendar > .door > .door-opened > img,
-.App > .calendar > .door > .door-closed > img {
-  width: 7rem;
-  height: 7rem;
+.App {
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42rem;
 }
 
-.App > .calendar > .door {
-  height: 7rem;
+.App > .calendar {
+  padding-top: 5rem;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 1rem;
+  grid-column-gap: 1rem;
+}
+
+.App > .calendar > .door-frame {
+  height: 6rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
 
-.App > .calendar > .door > .day {
+.App > .calendar > .door-frame > .door {
+  flex: 2;
+}
+
+.App > .calendar > .door-frame > .door > img {
+  width: 6rem;
+  height: 6rem;
+}
+
+.App > .calendar > .door-frame > .day {
   background: #33171750;
   padding: 1rem;
   flex: 1;
   color: #fff;
   font-weight: bold;
   font-size: 1.3rem;
-}
-
-.App > .calendar > .door > .door-opened,
-.App > .calendar > .door > .door-closed {
-  flex: 2;
-}
-
-.App > .calendar {
-  padding: 5rem;
-  display: grid;
-  grid-template-rows: repeat(6, 1fr);
-  grid-template-columns: repeat(4, 1fr);
-  grid-row-gap: 1rem;
-  grid-column-gap: 3rem;
 }
